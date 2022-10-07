@@ -1,6 +1,5 @@
 package com.ll.exam.app__2022_10_05.app.article.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.ll.exam.app__2022_10_05.app.base.entity.BaseEntity;
 import com.ll.exam.app__2022_10_05.app.member.entity.Member;
 import lombok.AllArgsConstructor;
@@ -10,7 +9,6 @@ import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 
@@ -24,9 +22,7 @@ import javax.persistence.ManyToOne;
 public class Article extends BaseEntity {
     @ManyToOne
     private Member author;
-    @Column(unique = true)
     private String subject;
-    @JsonIgnore
     private String content;
 
     public Article(long id) {
